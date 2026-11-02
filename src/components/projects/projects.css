@@ -1,0 +1,100 @@
+/* ---------- Célula de mídia / espaço reservado ---------- */
+.media-slot {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-placeholder);
+}
+
+.media-slot__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.media-slot--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-slot__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--f-ui);
+  font-size: 13px;
+  color: #a3a3a3;
+  text-align: center;
+}
+.media-slot__label small {
+  font-size: 11px;
+}
+
+/* ---------- Mosaico (grupo 846 x 615 do Figma) ---------- */
+.mosaic {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 846 / 615;
+}
+
+.mosaic > .media-slot {
+  position: absolute;
+}
+
+.mosaic__tall {
+  left: 29.669%;
+  top: 0;
+  width: 40.662%;
+  height: 100%;
+}
+.mosaic__tl,
+.mosaic__bl,
+.mosaic__tr,
+.mosaic__br {
+  width: 28.487%;
+  height: 49.268%;
+}
+.mosaic__tl { left: 0; top: 0; }
+.mosaic__bl { left: 0; top: 50.732%; }
+.mosaic__tr { left: 71.513%; top: 0; }
+.mosaic__br { left: 71.513%; top: 50.732%; }
+
+.project-slide__mosaic-link {
+  display: block;
+}
+.project-slide__mosaic-link:hover .media-slot__media {
+  transform: scale(1.03);
+}
+
+/* ---------- Card ---------- */
+.project-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card__cover {
+  aspect-ratio: 241 / 303;
+}
+
+.project-card__link:hover .media-slot__media {
+  transform: scale(1.04);
+}
+
+.project-card__title {
+  margin-top: 16px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.project-card__category {
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.project-card--placeholder .project-card__title,
+.project-card--placeholder .project-card__category {
+  opacity: 0.35;
+}

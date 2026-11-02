@@ -1,0 +1,29 @@
+.logo {
+  position: relative;
+  display: block;
+  aspect-ratio: 164 / 74.918;
+}
+
+.logo img {
+  position: absolute;
+}
+
+/* Posições relativas ao grupo "Group 1" (164 x 74,92) do Figma */
+.logo__face {
+  left: 0;
+  top: 0;
+  width: 42.26%;
+  height: 100%;
+}
+.logo__porto {
+  left: 45.24%;
+  top: 12.95%;
+  width: 51.89%;
+  height: 30.95%;
+}
+.logo__graph {
+  left: 44.09%;
+  top: 53.79%;
+  width: 55.88%;
+  height: 45.11%;
+}

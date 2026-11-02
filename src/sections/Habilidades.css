@@ -1,0 +1,91 @@
+.habilidades {
+  --section-bg: var(--c-charcoal);
+  --section-fg: var(--c-white);
+}
+
+.hab__title {
+  color: var(--c-yellow);
+}
+
+.hab__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill__label {
+  color: var(--c-white);
+}
+
+.skill__desc {
+  color: var(--c-offwhite);
+}
+
+.skill__icon {
+  object-fit: cover;
+  transition: transform var(--t-med) var(--ease);
+}
+.skill:hover .skill__icon {
+  transform: translateY(calc(-4 * var(--u)));
+}
+
+.hab__face {
+  transition: transform 500ms var(--ease);
+}
+.hab__face:hover {
+  transform: rotate(10deg);
+}
+
+@media (max-width: 899px) {
+  .habilidades .stage {
+    gap: 32px;
+  }
+
+  .habilidades .hab__title {
+    text-align: left;
+  }
+
+  .habilidades .hab__title {
+    font-size: clamp(40px, 11.5vw, 96px);
+  }
+
+  .habilidades img.hab__face {
+    align-self: flex-end;
+    width: 96px;
+    height: auto;
+    margin: -28px 8px -12px 0;
+  }
+
+  .habilidades .hab__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 32px 20px;
+  }
+
+  .habilidades .skill {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px 12px;
+  }
+
+  .habilidades img.skill__icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .habilidades .skill__stars {
+    display: flex;
+    gap: 4px;
+  }
+  .habilidades .skill__stars img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .habilidades .skill__label,
+  .habilidades .skill__desc {
+    grid-column: 1 / -1;
+    white-space: normal;
+  }
+}

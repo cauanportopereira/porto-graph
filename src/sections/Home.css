@@ -1,0 +1,84 @@
+.home {
+  --section-bg: var(--c-charcoal);
+  --section-fg: var(--c-white);
+}
+
+.home__tagline {
+  color: var(--c-offwhite);
+}
+
+.home__highlight {
+  color: var(--c-yellow);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+}
+
+.home .btn:hover {
+  box-shadow: calc(3 * var(--u)) calc(3 * var(--u)) 0 var(--c-yellow);
+}
+
+.home__cta {
+  font-size: calc(22.5 * var(--u));
+}
+
+.home__star {
+  transition: transform 600ms var(--ease);
+}
+.home__art:hover .home__star,
+.home__star:hover {
+  transform: rotate(12deg);
+}
+
+@media (max-width: 899px) {
+  .home .stage {
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .home__portfolio {
+    order: 1;
+    align-self: flex-start;
+  }
+
+  .home .home__art {
+    order: 2;
+    width: calc(288 * var(--u) + 120 * var(--u));
+    height: calc(330 * var(--u));
+    margin-top: 8px;
+  }
+  .home .home__star {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .home .home__face {
+    position: absolute;
+    left: calc(42 * var(--u));
+    top: calc(56 * var(--u));
+  }
+
+  .home__name {
+    order: 3;
+    align-self: flex-end;
+  }
+  .home__role {
+    order: 4;
+    align-self: flex-end;
+  }
+  .home .home__cta {
+    order: 5;
+    align-self: flex-start;
+    width: 254px;
+    height: 46px;
+    font-size: 20px;
+    margin-top: 12px;
+  }
+  .home__tagline {
+    order: 6;
+    text-align: left;
+    margin-top: 32px;
+  }
+}

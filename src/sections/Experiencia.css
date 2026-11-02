@@ -1,0 +1,84 @@
+.experiencia {
+  --section-bg: var(--c-navy);
+  --section-fg: var(--c-offwhite);
+}
+
+.exp__title {
+  color: var(--c-offwhite);
+}
+
+.exp__year {
+  color: var(--c-white);
+}
+
+.exp__desc {
+  color: var(--c-offwhite);
+}
+
+.exp__logo-svg img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Logo da páprica: PNG original usado como máscara sobre o amarelo, como no Figma */
+.exp__logo-mask {
+  background: var(--c-yellow);
+  -webkit-mask: var(--mask) center / 100% 100% no-repeat;
+  mask: var(--mask) center / 100% 100% no-repeat;
+}
+
+.exp__charneira {
+  color: var(--c-yellow);
+}
+.exp__charneira > span {
+  display: block;
+}
+
+.exp__photo > img {
+  transition: transform 600ms var(--ease);
+}
+.exp__photo:hover > img {
+  transform: scale(1.04);
+}
+
+.exp__star {
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (max-width: 899px) {
+  .experiencia .stage {
+    gap: 56px;
+    align-items: center;
+  }
+
+  .experiencia .exp-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    max-width: 380px;
+  }
+
+  .experiencia .exp__logo-svg {
+    width: 241px;
+    height: 63px;
+  }
+  .experiencia .exp__logo-mask {
+    width: 231px;
+    height: 52px;
+  }
+  .experiencia .exp__charneira {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .experiencia .exp__photo {
+    width: 255px;
+    height: 300px;
+    margin-top: 8px;
+    --u: 1px;
+  }
+}

@@ -1,0 +1,14 @@
+.face-blond {
+  container-type: inline-size;
+  aspect-ratio: 172.8 / 181.1;
+}
+
+.face-blond img {
+  --fu: calc(100cqw / 172.8);
+  position: absolute;
+  left: calc(var(--px) * var(--fu));
+  top: calc(var(--py) * var(--fu));
+  width: calc(var(--pw) * var(--fu));
+  height: calc(var(--ph) * var(--fu));
+  transform: rotate(13.53deg);
+}

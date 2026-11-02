@@ -1,0 +1,10 @@
+.pill {
+  display: block;
+  z-index: 4;
+  border-radius: 999px;
+  transition: transform var(--t-med) var(--ease);
+}
+
+.pill:hover {
+  transform: translateY(calc(6 * var(--u)));
+}

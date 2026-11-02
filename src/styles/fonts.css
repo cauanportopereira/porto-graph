@@ -1,0 +1,32 @@
+/* Fontes originais do Figma (arquivos em src/assets/fonts). */
+@font-face {
+  font-family: 'Block Berthold';
+  src: url('../assets/fonts/BlockBerthold-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Printvetica';
+  src: url('../assets/fonts/Printvetica.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica PG';
+  src: url('../assets/fonts/Helvetica.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica PG';
+  src: url('../assets/fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

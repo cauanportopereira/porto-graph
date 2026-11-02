@@ -1,0 +1,27 @@
+/* Tokens da identidade Porto Graph, extraídos do Figma. */
+:root {
+  --c-charcoal: #222527;
+  --c-green: #00b290;
+  --c-yellow: #ffff40;
+  --c-navy: #0c1b2a;
+  --c-offwhite: #f1f3f5;
+  --c-white: #ffffff;
+  --c-placeholder: #d9d9d9;
+
+  --f-display: 'Block Berthold', 'Arial Black', sans-serif;
+  --f-ui: 'Printvetica', 'Helvetica PG', Helvetica, Arial, sans-serif;
+  --f-body: 'Helvetica PG', Helvetica, Arial, sans-serif;
+
+  /* Todo o texto do Figma usa entrelinha 95,1% e tracking de 2%. */
+  --lh: 0.951;
+  --tracking: 0.02em;
+
+  /* 1 unidade = 1px do frame de 1440px, escalado à largura do "stage". */
+  --u: calc(100cqw / 1440);
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 180ms;
+  --t-med: 320ms;
+
+  --mobile-bar: 64px;
+}

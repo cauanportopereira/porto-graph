@@ -1,0 +1,84 @@
+.mnav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  color: var(--bar-fg);
+}
+
+.mnav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--mobile-bar);
+  padding: 0 20px;
+  background: var(--bar-bg);
+  transition: background-color var(--t-med) var(--ease);
+}
+
+.mnav__logo .logo {
+  width: 104px;
+}
+
+.mnav__toggle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.mnav__bars,
+.mnav__bars::before,
+.mnav__bars::after {
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 2px;
+  background: var(--bar-fg);
+  transition: transform var(--t-fast) var(--ease), opacity var(--t-fast);
+}
+.mnav__bars {
+  top: 21px;
+}
+.mnav__bars::before,
+.mnav__bars::after {
+  content: '';
+  left: 0;
+}
+.mnav__bars::before {
+  top: -7px;
+}
+.mnav__bars::after {
+  top: 7px;
+}
+
+.mnav.is-open .mnav__bars {
+  background: transparent;
+}
+.mnav.is-open .mnav__bars::before {
+  transform: translateY(7px) rotate(45deg);
+}
+.mnav.is-open .mnav__bars::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mnav__panel {
+  height: calc(100dvh - var(--mobile-bar));
+  padding: 32px 24px;
+  background: var(--bar-bg);
+}
+
+.mnav__panel ul {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mnav__panel a {
+  font-family: var(--f-ui);
+  font-size: 28px;
+  color: var(--bar-fg);
+  text-decoration: underline;
+  text-underline-position: from-font;
+}

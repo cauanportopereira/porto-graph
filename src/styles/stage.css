@@ -1,0 +1,130 @@
+/*
+ * "Stage": reproduz cada frame de 1440x1024 do Figma.
+ * Os elementos são posicionados com as coordenadas exatas do Figma
+ * (--x, --y, --w, --h em px do frame) e escalam junto com a largura.
+ * Abaixo de 900px o layout vira uma coluna (ver regras mobile de cada seção).
+ */
+.section {
+  position: relative;
+  overflow: hidden;
+  background: var(--section-bg);
+  color: var(--section-fg, inherit);
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  aspect-ratio: 1440 / 1024;
+  container-type: inline-size;
+}
+
+.abs {
+  position: absolute;
+  left: calc(var(--x) * var(--u));
+  top: calc(var(--y) * var(--u));
+  width: calc(var(--w) * var(--u));
+  height: calc(var(--h) * var(--u));
+}
+
+/* Arte rotacionada (rostos, estrelas): gira em torno do próprio centro. */
+.rot {
+  transform: rotate(var(--r, 0deg));
+}
+
+/* Agrupadores sem caixa no desktop; viram blocos no mobile. */
+.group {
+  display: contents;
+}
+
+img.abs,
+.abs > img {
+  width: calc(var(--w) * var(--u));
+  height: calc(var(--h) * var(--u));
+}
+
+/* Recorte de foto (máscara retangular do Figma). */
+.crop {
+  overflow: hidden;
+}
+.crop > img {
+  position: absolute;
+  left: calc(var(--ix) * var(--u));
+  top: calc(var(--iy) * var(--u));
+  width: calc(var(--iw) * var(--u));
+  height: calc(var(--ih) * var(--u));
+  object-fit: cover;
+}
+
+/* Entrada discreta das seções */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 700ms var(--ease),
+    transform 700ms var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 899px) {
+  :root {
+    /* No mobile, artes mantêm a proporção do Figma em escala fixa. */
+    --u: calc(min(100vw, 720px) / 720);
+  }
+
+  .stage {
+    aspect-ratio: auto;
+    container-type: normal;
+    display: flex;
+    flex-direction: column;
+    padding: calc(var(--mobile-bar) + 40px) 24px 72px;
+  }
+
+  .stage .abs {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+  }
+
+  .stage img.abs {
+    width: calc(var(--w) * var(--u));
+    height: calc(var(--h) * var(--u));
+  }
+
+  .group {
+    display: block;
+    position: relative;
+  }
+
+  .fs-128 { font-size: clamp(52px, 15vw, 96px); }
+  .fs-90 { font-size: clamp(42px, 11.5vw, 72px); }
+  .fs-48 { font-size: 34px; }
+  .fs-40 { font-size: 26px; }
+  .fs-32 { font-size: 22px; }
+  .fs-24 { font-size: 18px; }
+  .fs-20 { font-size: 16px; }
+  .fs-16 { font-size: 15px; }
+
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .mobile-only {
+    display: none !important;
+  }
+}

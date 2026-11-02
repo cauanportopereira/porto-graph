@@ -1,0 +1,94 @@
+.sobre {
+  --section-bg: var(--c-green);
+  --section-fg: var(--c-navy);
+}
+
+.sobre__title > span {
+  display: block;
+}
+.sobre__hello {
+  color: var(--c-offwhite);
+}
+.sobre__iam {
+  color: var(--c-navy);
+}
+
+.sobre__text {
+  color: var(--c-navy);
+  text-align: justify;
+}
+.sobre__text p + p {
+  margin-top: 0.951em; /* linha em branco do Figma */
+}
+.sobre__text strong {
+  font-weight: 700;
+}
+
+.sobre__face-main,
+.sobre__face-leopard {
+  transition: transform 500ms var(--ease);
+}
+.sobre__face-main:hover {
+  transform: rotate(-3deg);
+}
+
+@media (max-width: 899px) {
+  .sobre .stage {
+    gap: 24px;
+  }
+
+  .sobre .sobre__title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sobre .sobre__stars {
+    display: flex;
+    gap: 8px;
+    margin-top: -8px;
+  }
+
+  .sobre .sobre__text {
+    text-align: left;
+  }
+
+  .sobre .sobre__face-main {
+    align-self: center;
+    margin: 8px 0;
+  }
+
+  /* Fotos e rostos mantêm a composição do Figma em escala reduzida */
+  .sobre .sobre__photos {
+    align-self: center;
+    width: calc(392 * var(--u) + 160 * var(--u));
+    height: calc(700 * var(--u));
+  }
+  .sobre .sobre__photos > * {
+    position: absolute;
+  }
+  .sobre .sobre__foto1 {
+    left: calc(110 * var(--u));
+    top: calc(40 * var(--u));
+    width: calc(392 * var(--u));
+    height: calc(227 * var(--u));
+  }
+  .sobre .sobre__foto2 {
+    left: calc(110 * var(--u));
+    top: calc(279 * var(--u));
+    width: calc(392 * var(--u));
+    height: calc(392 * var(--u));
+  }
+  .sobre .sobre__star-lg {
+    left: calc(430 * var(--u));
+    top: calc(-28 * var(--u));
+  }
+  .sobre .sobre__face-blond {
+    left: calc(30 * var(--u));
+    top: calc(181 * var(--u));
+    width: calc(172.8 * var(--u));
+  }
+  .sobre .sobre__face-leopard {
+    left: calc(40 * var(--u));
+    top: calc(560 * var(--u));
+  }
+}

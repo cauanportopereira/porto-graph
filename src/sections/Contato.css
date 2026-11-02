@@ -1,0 +1,90 @@
+.contato {
+  --section-bg: var(--c-green);
+  --section-fg: var(--c-navy);
+}
+
+.contato__title {
+  color: var(--c-navy);
+  line-height: 1.1406; /* 146px entre linhas no Figma */
+}
+.contato__title-light {
+  color: var(--c-offwhite);
+}
+
+.contato__lead {
+  color: var(--c-charcoal);
+}
+.contato__lead strong {
+  font-weight: 700;
+}
+
+.contato__video {
+  overflow: hidden;
+  background: var(--c-placeholder);
+}
+.contato__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contato__email {
+  color: var(--c-navy);
+  text-decoration: none;
+}
+.contato__email:hover {
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
+
+.contato__social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contato__btn {
+  width: 100%;
+  height: 100%;
+  background: var(--c-yellow);
+  color: var(--c-navy);
+}
+
+@media (max-width: 899px) {
+  .contato .stage {
+    gap: 28px;
+  }
+
+  .contato .contato__title {
+    line-height: 1.05;
+  }
+
+  .contato .contato__lead {
+    text-align: left;
+  }
+
+  .contato .contato__video {
+    order: 10;
+    align-self: center;
+    width: min(100%, 308px);
+    aspect-ratio: 308 / 546;
+  }
+
+  .contato img.contato__faces {
+    order: 11;
+    align-self: center;
+    width: 220px;
+    height: auto;
+    margin-top: -48px;
+  }
+
+  .contato .contato__social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .contato .contato__social li {
+    width: 150px;
+    height: 54px;
+  }
+}
